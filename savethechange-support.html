@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveTheChange - Support</title>
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --bg: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --text: #212121;
+            --text-secondary: #616161;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .quick-link {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .quick-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-link .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .quick-link .title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .quick-link .subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 32px 0;
+        }
+
+        .faq-section h2 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .faq-category {
+            margin-bottom: 28px;
+        }
+
+        .faq-category h3 {
+            color: var(--primary-dark);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #F5F5F5;
+        }
+
+        .faq-question .arrow {
+            transition: transform 0.3s;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .faq-question.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            padding: 0 20px 16px 20px;
+        }
+
+        .faq-answer .zh {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 24px; }
+            .container { padding: 16px; }
+            .quick-links { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SaveTheChange</h1>
+    <p>Support Center / 帮助中心</p>
+</header>
+
+<div class="container">
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+        <a href="#getting-started" class="quick-link">
+            <div class="icon">&#127793;</div>
+            <div class="title">Getting Started</div>
+            <div class="subtitle">快速入门</div>
+        </a>
+        <a href="#faq" class="quick-link">
+            <div class="icon">&#10067;</div>
+            <div class="title">FAQ</div>
+            <div class="subtitle">常见问题</div>
+        </a>
+        <a href="#challenges" class="quick-link">
+            <div class="icon">&#127942;</div>
+            <div class="title">Challenges</div>
+            <div class="subtitle">挑战计划</div>
+        </a>
+        <a href="#contact" class="quick-link">
+            <div class="icon">&#9993;</div>
+            <div class="title">Contact Us</div>
+            <div class="subtitle">联系我们</div>
+        </a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section" id="faq">
+        <h2>Frequently Asked Questions / 常见问题</h2>
+
+        <!-- Getting Started -->
+        <div class="faq-category" id="getting-started">
+            <h3>Getting Started / 入门指南</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I start using SaveTheChange?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Simply open the app and choose a savings challenge from the home screen. You can pick from 52-Week, 365-Day, or 30-Day challenges, or create a custom one. Tap "Start Challenge" and you are ready to begin -- no registration or login required.
+                    <div class="zh">只需打开应用，从主屏幕选择一个存钱挑战即可。您可以选择52周、365天或30天挑战，也可以自定义挑战。点击"开始挑战"即可 -- 无需注册或登录。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do I need to create an account?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    No! SaveTheChange works without any account or login. All your data is stored locally on your device. You can start using the app immediately after downloading it.
+                    <div class="zh">不需要！存钱挑战无需任何账户或登录。您的所有数据都存储在设备本地。下载后即可立即使用。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is the app really free?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, SaveTheChange is completely free to download and use. There are no in-app purchases, no subscriptions, and no ads.
+                    <div class="zh">是的，存钱挑战完全免费下载和使用。没有应用内购买、没有订阅、没有广告。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Challenges -->
+        <div class="faq-category" id="challenges">
+            <h3>Challenges / 挑战计划</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the 52-Week Challenge?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    The 52-Week Challenge is a savings plan where you save an increasing amount each week. By default, you start with a small amount (e.g., $5) in week 1 and increase it by a set amount (e.g., $5) each week. By week 52, you will have saved a significant total while building a strong savings habit.
+                    <div class="zh">52周存钱挑战是一种每周递增的存钱计划。默认情况下，第1周存入少量（例如$5），之后每周增加固定金额（例如$5）。到第52周时，您将攒下一笔可观的金额，同时养成牢固的储蓄习惯。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the 365-Day Challenge?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    The 365-Day Challenge works similarly to the 52-Week version but on a daily basis. You save a small amount on day 1 and increase it each day. Over a full year, this builds impressive savings through daily consistency.
+                    <div class="zh">365天存钱挑战与52周挑战类似，但按天计算。第1天存入少量，之后每天递增。一整年下来，通过每日坚持会积累可观的储蓄。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the 30-Day Saver?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    The 30-Day Saver is a one-month challenge where you save a fixed amount each day for 30 days. It is a great starting point for beginners who want to build a savings habit without a long-term commitment.
+                    <div class="zh">30天存钱计划是一个月期挑战，每天存入固定金额，持续30天。对于想培养储蓄习惯但不想长期承诺的初学者来说，这是一个很好的起点。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I create my own challenge?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! You can create a custom challenge with your own start amount, duration, and frequency. Choose daily or weekly check-ins, set any starting amount and increment, and build a plan that works for you.
+                    <div class="zh">可以！您可以创建自定义挑战，自行设置起始金额、周期和频率。选择每日或每周打卡，设置任意起始金额和递增值，打造适合您的计划。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I run multiple challenges at the same time?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, you can have multiple active challenges simultaneously. Each challenge tracks its own progress and check-ins independently.
+                    <div class="zh">可以，您可以同时进行多个挑战。每个挑战独立追踪自己的进度和打卡记录。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Check-ins -->
+        <div class="faq-category">
+            <h3>Check-ins &amp; Progress / 打卡与进度</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I check in?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Open the challenge detail page and tap the check-in button. The app will record the expected savings amount for that day or week. A single tap is all it takes.
+                    <div class="zh">打开挑战详情页面，点击打卡按钮即可。应用会记录当天或当周的预期存款金额。只需轻点一下。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What if I miss a day? Can I catch up?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! The app includes a "Supplement Check-in" feature that lets you make up for missed days or weeks. You can go back and check in for any missed period so your progress stays on track.
+                    <div class="zh">可以！应用提供"补签"功能，允许您补上漏掉的日期或周。您可以回去为任何漏掉的时段打卡，保持进度。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What do the progress rings mean?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    The progress ring visually shows how far along you are in your challenge. A full ring means you have completed all check-ins. The ring fills as you check in each day or week. You can also see your total saved amount, current streak, and remaining check-ins.
+                    <div class="zh">进度环直观地显示您在挑战中的进度。环形填满表示您已完成所有打卡。每次打卡后环形会相应填充。您还可以看到总存款金额、当前连续打卡天数和剩余打卡次数。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data & Privacy -->
+        <div class="faq-category">
+            <h3>Data &amp; Privacy / 数据与隐私</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Where is my data stored?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    All your data is stored locally on your device as JSON files. It is never sent to any server or shared with anyone. Your financial information stays completely private.
+                    <div class="zh">您的所有数据都以 JSON 文件格式存储在设备本地。永远不会发送到任何服务器或与任何人共享。您的财务信息完全私密。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Does the app need internet access?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    No. SaveTheChange works completely offline. You do not need an internet connection to use any feature of the app.
+                    <div class="zh">不需要。存钱挑战完全离线运行。使用应用的任何功能都不需要网络连接。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What happens if I delete the app?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Since all data is stored locally on your device, deleting the app will permanently remove all your challenges, check-in history, and settings. There is no cloud backup. If you want to keep your data, do not delete the app.
+                    <div class="zh">由于所有数据都存储在设备本地，删除应用将永久删除您的所有挑战、打卡历史和设置。没有云备份。如果您想保留数据，请不要删除应用。</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Does the app collect any personal information?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    No. The app does not collect, transmit, or share any personal information. There are no analytics, no tracking, no advertising, and no third-party SDKs.
+                    <div class="zh">不会。本应用不收集、传输或共享任何个人信息。没有分析工具、没有追踪、没有广告、没有第三方SDK。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reminders -->
+        <div class="faq-category">
+            <h3>Reminders / 提醒</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I set up reminders?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    Go to Settings in the app, then tap on "Reminders." You can enable daily or weekly reminders and choose the time that works best for you. Reminders use local notifications and work offline.
+                    <div class="zh">在应用中进入"设置"，然后点击"提醒"。您可以启用每日或每周提醒，并选择最适合您的时间。提醒使用本地通知，离线也能正常工作。</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-section" id="contact">
+        <h2>Still Need Help? / 还需要帮助？</h2>
+        <p>If you have questions not covered above, please reach out to us through the app.</p>
+        <p style="color: var(--text-secondary); font-size: 14px;">如果以上问题未能解答您的疑问，请通过应用联系我们。</p>
+        <br>
+        <p style="font-weight: 600;">In the app: Settings &gt; Contact Us</p>
+        <p style="color: var(--text-secondary); font-size: 14px;">在应用内：设置 &gt; 联系我们</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 SaveTheChange. All rights reserved.</p>
+    <p style="margin-top: 8px;">SaveTheChange for iOS - Support Center</p>
+</footer>
+
+<script>
+    function toggleFaq(element) {
+        const answer = element.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+
+        // Toggle current
+        if (!isOpen) {
+            answer.classList.add('open');
+            element.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
