@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarMatch — Support</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #fbfbfd;
+      --text-primary: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #86868b;
+      --accent: #5856d6;
+      --accent-hover: #4240a8;
+      --border: #d2d2d7;
+      --card-bg: #ffffff;
+      --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+      background: linear-gradient(180deg, #1c1c3a 0%, #2d2b55 40%, #4a3f7a 100%);
+      color: #fff;
+    }
+
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ---- Container ---- */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ---- Section ---- */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+
+    /* ---- App Description ---- */
+    .description-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 32px;
+    }
+
+    .description-card p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    @media (max-width: 540px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- FAQ ---- */
+    details {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+
+    details:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    summary {
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background var(--transition);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-left: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M10 6.5a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0v-5a1 1 0 0 1 1-1z' fill='%2386868b'/%3E%3Cpath d='M6.5 10a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1z' fill='%2386868b'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform var(--transition);
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary:hover {
+      background: rgba(88, 86, 214, 0.04);
+    }
+
+    .faq-answer {
+      padding: 20px 24px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .faq-answer strong {
+      color: var(--text-primary);
+    }
+
+    .faq-answer ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    .faq-answer li {
+      margin-bottom: 6px;
+    }
+
+    /* ---- Contact ---- */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 980px;
+      background: rgba(88, 86, 214, 0.08);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .contact-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-icon">&#x2728;</div>
+    <h1>StarMatch</h1>
+    <p>Your guide to zodiac compatibility — love, friendship, and beyond.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- App Description -->
+    <section class="section">
+      <h2 class="section-title">About StarMatch</h2>
+      <div class="description-card">
+        <p>
+          StarMatch is a zodiac compatibility checker that explores how the twelve zodiac signs
+          relate to one another. It covers <strong>78 unique pairings</strong> and rates each
+          combination across three dimensions — <strong>Love</strong>, <strong>Friendship</strong>,
+          and <strong>Work</strong> — so you can see where the stars align (and where they don't).
+          Every day you receive a personalized tip tailored to your sign, and you can share your
+          compatibility results as beautiful cards with friends.
+        </p>
+        <div class="features">
+          <div class="feature-item"><span class="feature-dot"></span>12 zodiac signs with detailed profiles</div>
+          <div class="feature-item"><span class="feature-dot"></span>78 unique compatibility pairings</div>
+          <div class="feature-item"><span class="feature-dot"></span>Scores across Love, Friendship &amp; Work</div>
+          <div class="feature-item"><span class="feature-dot"></span>Daily personalized tips</div>
+          <div class="feature-item"><span class="feature-dot"></span>Birthday-based sign detection</div>
+          <div class="feature-item"><span class="feature-dot"></span>Check history &amp; shareable cards</div>
+          <div class="feature-item"><span class="feature-dot"></span>Fully offline — no login needed</div>
+          <div class="feature-item"><span class="feature-dot"></span>All data stays on your device</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <!-- Q1 -->
+      <details>
+        <summary>What is StarMatch?</summary>
+        <div class="faq-answer">
+          <p>
+            StarMatch is an iOS app that lets you explore zodiac compatibility. Enter two signs —
+            or use a birthday to auto-detect a sign — and instantly see a compatibility score across
+            Love, Friendship, and Work dimensions. It also delivers daily tips tailored to your sign
+            and lets you share results as beautiful cards.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q2 -->
+      <details>
+        <summary>What are the 12 zodiac signs?</summary>
+        <div class="faq-answer">
+          <p>The twelve signs of the Western (tropical) zodiac are:</p>
+          <ul>
+            <li><strong>Aries</strong> — March 21 – April 19</li>
+            <li><strong>Taurus</strong> — April 20 – May 20</li>
+            <li><strong>Gemini</strong> — May 21 – June 20</li>
+            <li><strong>Cancer</strong> — June 21 – July 22</li>
+            <li><strong>Leo</strong> — July 23 – August 22</li>
+            <li><strong>Virgo</strong> — August 23 – September 22</li>
+            <li><strong>Libra</strong> — September 23 – October 22</li>
+            <li><strong>Scorpio</strong> — October 23 – November 21</li>
+            <li><strong>Sagittarius</strong> — November 22 – December 21</li>
+            <li><strong>Capricorn</strong> — December 22 – January 19</li>
+            <li><strong>Aquarius</strong> — January 20 – February 18</li>
+            <li><strong>Pisces</strong> — February 19 – March 20</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Q3 -->
+      <details>
+        <summary>How does compatibility scoring work?</summary>
+        <div class="faq-answer">
+          <p>
+            Each pair of signs is evaluated across three dimensions — Love, Friendship, and Work —
+            and assigned a score. The scores are based on traditional astrological principles,
+            including element compatibility (fire, earth, air, water), modality (cardinal, fixed,
+            mutable), and well-established sign relationships. A higher score indicates stronger
+            natural harmony between two signs in that particular area.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q4 -->
+      <details>
+        <summary>What do the three score dimensions mean?</summary>
+        <div class="faq-answer">
+          <ul>
+            <li><strong>Love</strong> — Measures romantic and emotional chemistry between two signs. High scores suggest natural attraction, mutual understanding, and long-term romantic potential.</li>
+            <li><strong>Friendship</strong> — Rates how well two signs get along as friends. High scores indicate easy conversation, shared interests, and reliable companionship.</li>
+            <li><strong>Work</strong> — Evaluates professional compatibility. High scores mean the two signs complement each other in teamwork, communication style, and problem-solving approaches.</li>
+          </ul>
+          <p>
+            Each dimension is scored independently, so a pair might have a high Friendship score
+            but a lower Love score — and that is completely normal.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q5 -->
+      <details>
+        <summary>How do I find my zodiac sign?</summary>
+        <div class="faq-answer">
+          <p>
+            The simplest way is to enter your birth date in StarMatch. The app automatically
+            determines your zodiac sign based on the standard Western zodiac date ranges. You can
+            also look up the date ranges manually (see the question above) and select your sign
+            directly.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q6 -->
+      <details>
+        <summary>Can I check compatibility between any two signs?</summary>
+        <div class="faq-answer">
+          <p>
+            Yes. You can freely select any two zodiac signs — including the same sign compared with
+            itself — and view the full compatibility breakdown across all three dimensions. There
+            are no restrictions or locked pairings.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q7 -->
+      <details>
+        <summary>How many unique sign pairings are included?</summary>
+        <div class="faq-answer">
+          <p>
+            StarMatch includes all <strong>78 unique pairings</strong> of the 12 zodiac signs. This
+            covers every possible combination (including each sign paired with itself), calculated
+            using the formula n(n+1)/2 = 12 × 13 / 2 = 78.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q8 -->
+      <details>
+        <summary>What are daily tips?</summary>
+        <div class="faq-answer">
+          <p>
+            Every day, StarMatch provides a personalized tip tailored to your zodiac sign. These
+            tips cover topics such as relationships, self-reflection, communication, and personal
+            growth. New tips are available daily, and your history of past tips is saved so you
+            can revisit them at any time.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q9 -->
+      <details>
+        <summary>Do I need an account or login?</summary>
+        <div class="faq-answer">
+          <p>
+            No. StarMatch does not require any account, registration, or login. You can start
+            using the app immediately after installing it. There are no usernames, passwords, or
+            email addresses involved.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q10 -->
+      <details>
+        <summary>Does the app require internet?</summary>
+        <div class="faq-answer">
+          <p>
+            No. StarMatch is fully functional offline. All compatibility data, daily tips, and
+            features are built into the app and stored locally on your device. You do not need an
+            internet connection to use any part of the app.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q11 -->
+      <details>
+        <summary>Is my data private?</summary>
+        <div class="faq-answer">
+          <p>
+            Absolutely. StarMatch stores all data — including your saved sign, compatibility check
+            history, and tip history — locally on your device. Nothing is transmitted to any server.
+            The app does not collect, track, or share any personal information. Your data never
+            leaves your phone.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q12 -->
+      <details>
+        <summary>How do I share my compatibility results?</summary>
+        <div class="faq-answer">
+          <p>
+            After viewing a compatibility result, tap the <strong>Share</strong> button. StarMatch
+            generates a beautifully designed result card that you can send via Messages, email,
+            social media, or any other sharing option available on your device.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q13 -->
+      <details>
+        <summary>Can I revisit previous compatibility checks?</summary>
+        <div class="faq-answer">
+          <p>
+            Yes. StarMatch keeps a local history of all the compatibility checks you have performed.
+            You can browse this history at any time to review past results without needing to
+            re-select the signs.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q14 -->
+      <details>
+        <summary>How do I report a bug or request a feature?</summary>
+        <div class="faq-answer">
+          <p>
+            We appreciate your feedback. If you encounter a bug, have a suggestion, or want to
+            request a new feature, please reach out to us at:
+          </p>
+          <p>
+            <strong><a href="mailto:support@starmatch.app" style="color:var(--accent);text-decoration:none;">support@starmatch.app</a></strong>
+          </p>
+          <p>
+            Please include your device model, iOS version, and a brief description of the issue
+            or idea. We read every message.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-card">
+        <p>Have questions that aren't covered above? We would love to hear from you.</p>
+        <a href="mailto:support@starmatch.app" class="contact-link">support@starmatch.app</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 StarMatch. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

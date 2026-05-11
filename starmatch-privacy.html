@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - StarMatch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #d2d2d7;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 26px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+        }
+
+        .app-icon span {
+            font-size: 48px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #86868b;
+            font-weight: 400;
+        }
+
+        .effective-date {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 16px;
+            background-color: #e8e8ed;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #6e6e73;
+            font-weight: 500;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0f0f5;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #424245;
+            margin-bottom: 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 12px 0 12px 20px;
+        }
+
+        li {
+            font-size: 15px;
+            color: #424245;
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        li::marker {
+            color: #667eea;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #f5f0ff 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: #1d1d1f;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 4px 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 18px;
+            padding: 32px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-card h2 {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-card a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            transition: border-color 0.2s;
+        }
+
+        .contact-card a:hover {
+            border-bottom-color: white;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .summary-item {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .summary-item .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .summary-item .label {
+            font-size: 13px;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .summary-item .value {
+            font-size: 15px;
+            color: #1d1d1f;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #86868b;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 16px;
+            }
+
+            header {
+                padding: 40px 0 30px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 24px 20px;
+                border-radius: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">
+                <span>&#9733;</span>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">StarMatch &mdash; com.xiaoyu.starmatch</p>
+            <div class="effective-date">Effective Date: May 11, 2026</div>
+        </header>
+
+        <!-- Privacy at a Glance -->
+        <section>
+            <h2>Privacy at a Glance</h2>
+            <p>StarMatch is built with your privacy as a top priority. Here is a quick summary of our practices:</p>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="icon">&#128274;</div>
+                    <div class="label">Data Collection</div>
+                    <div class="value">None</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">&#128241;</div>
+                    <div class="label">Data Storage</div>
+                    <div class="value">Local Only</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">&#127760;</div>
+                    <div class="label">Network Access</div>
+                    <div class="value">None</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">&#128270;</div>
+                    <div class="label">Third-Party SDKs</div>
+                    <div class="value">None</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">&#128064;</div>
+                    <div class="label">Analytics &amp; Ads</div>
+                    <div class="value">None</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">&#128100;</div>
+                    <div class="label">User Accounts</div>
+                    <div class="value">None</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Introduction -->
+        <section>
+            <h2>1. Introduction</h2>
+            <p>Welcome to <strong>StarMatch</strong> (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). StarMatch is a zodiac compatibility checker app that explores compatibility between any two zodiac signs across love, friendship, and work dimensions. The app includes 78 unique sign pairings with detailed analysis, daily tips, birthday-based sign detection, and shareable result cards.</p>
+            <p>This Privacy Policy explains how we handle information when you use the StarMatch application (&ldquo;App&rdquo;) on your iOS device. We are committed to protecting your privacy and being transparent about our data practices.</p>
+
+            <div class="highlight-box">
+                <p>&#9733; In short: StarMatch does not collect, transmit, or share any personal data. All information stays on your device.</p>
+            </div>
+        </section>
+
+        <!-- 2. Information We Collect -->
+        <section>
+            <h2>2. Information We Collect</h2>
+            <div class="highlight-box">
+                <p>&#128274; StarMatch does <strong>not</strong> collect any personal information from you.</p>
+            </div>
+
+            <p>When you use StarMatch, we do <strong>not</strong> collect:</p>
+            <ul>
+                <li>Personal identifiers (name, email address, phone number)</li>
+                <li>Device identifiers (IDFA, IDFV, serial number)</li>
+                <li>Location data</li>
+                <li>Usage analytics or browsing history</li>
+                <li>Contact lists or address book data</li>
+                <li>Photos, camera, or microphone data</li>
+                <li>Health or fitness data</li>
+                <li>Payment information (all purchases are handled directly by Apple)</li>
+                <li>Any other personal or sensitive data</li>
+            </ul>
+
+            <p>The only data associated with the App is stored entirely on your device and consists of:</p>
+            <ul>
+                <li><strong>Zodiac sign selections:</strong> The signs you choose to check compatibility between.</li>
+                <li><strong>Birthday information:</strong> If you choose to enter your birthday for automatic sign detection, this date is stored locally on your device only.</li>
+                <li><strong>App preferences:</strong> Settings such as favorites or previously viewed pairings, stored locally using Apple&rsquo;s SwiftData and AppStorage frameworks.</li>
+            </ul>
+
+            <p>None of this data is ever transmitted off your device or accessed by us in any way.</p>
+        </section>
+
+        <!-- 3. How We Use Information -->
+        <section>
+            <h2>3. How We Use Information</h2>
+            <p>Because we do not collect any data from your device, there is no information for us to use. All data stored by the App is used exclusively on your device to provide core functionality:</p>
+            <ul>
+                <li><strong>Zodiac sign selections</strong> are used solely to display compatibility analysis between the selected signs.</li>
+                <li><strong>Birthday information</strong> is used solely to determine your zodiac sign locally on your device.</li>
+                <li><strong>App preferences</strong> are used solely to remember your settings and provide a personalized experience on your device.</li>
+            </ul>
+            <p>No data is used for profiling, targeted advertising, analytics, machine learning training, or any purpose beyond the immediate functionality of the App on your device.</p>
+        </section>
+
+        <!-- 4. Data Storage -->
+        <section>
+            <h2>4. Data Storage</h2>
+            <div class="highlight-box">
+                <p>&#128241; All data is stored locally on your device and never leaves it.</p>
+            </div>
+
+            <p>StarMatch uses the following on-device storage mechanisms:</p>
+            <ul>
+                <li><strong>SwiftData:</strong> Apple&rsquo;s modern data persistence framework used to store app data such as compatibility history and preferences locally on your device.</li>
+                <li><strong>AppStorage:</strong> Apple&rsquo;s UserDefaults-backed property wrapper used to store lightweight preferences and settings locally on your device.</li>
+            </ul>
+
+            <p>Key characteristics of our data storage:</p>
+            <ul>
+                <li>All data is stored within the App&rsquo;s sandboxed container on your iOS device.</li>
+                <li>Data is protected by iOS&rsquo;s built-in app sandboxing and data protection mechanisms.</li>
+                <li><strong>No data is transmitted over any network</strong> &mdash; the App does not include any networking code.</li>
+                <li><strong>No data is backed up to any cloud service</strong> by the App itself (though iCloud backup behavior depends on your personal device settings).</li>
+                <li>When you delete the App from your device, all locally stored data associated with the App is permanently removed.</li>
+            </ul>
+        </section>
+
+        <!-- 5. Third-Party Services -->
+        <section>
+            <h2>5. Third-Party Services</h2>
+            <div class="highlight-box">
+                <p>&#128270; StarMatch does not use any third-party SDKs, frameworks, or services.</p>
+            </div>
+
+            <p>The App does not integrate with, embed, or communicate with any third-party services, including but not limited to:</p>
+            <ul>
+                <li>Analytics services (e.g., Firebase Analytics, Google Analytics, Mixpanel)</li>
+                <li>Advertising networks (e.g., AdMob, Facebook Audience Network)</li>
+                <li>Crash reporting services (e.g., Crashlytics, Sentry)</li>
+                <li>Social media SDKs (e.g., Facebook Login, Google Sign-In)</li>
+                <li>Payment processors (other than Apple&rsquo;s built-in App Store purchase system)</li>
+                <li>Cloud storage or database services</li>
+                <li>Any other third-party data collection or transmission services</li>
+            </ul>
+
+            <p>The App contains <strong>no networking code whatsoever</strong>. It does not make any HTTP requests, open any network connections, or communicate with any external servers.</p>
+
+            <p><strong>Apple App Store:</strong> Any purchases made through the App are processed by Apple&rsquo;s App Store. Apple&rsquo;s own privacy policy and terms apply to those transactions. We do not receive any personal information from Apple regarding your purchases beyond what is required for App Store revenue reporting.</p>
+        </section>
+
+        <!-- 6. Device Permissions -->
+        <section>
+            <h2>6. Device Permissions</h2>
+            <p>StarMatch does <strong>not</strong> request or require access to any device permissions or hardware features, including:</p>
+            <ul>
+                <li>Camera</li>
+                <li>Location Services / GPS</li>
+                <li>Contacts / Address Book</li>
+                <li>Photos / Photo Library</li>
+                <li>Microphone</li>
+                <li>Bluetooth</li>
+                <li>Health / HealthKit</li>
+                <li>Motion &amp; Fitness</li>
+                <li>Reminders / Calendar</li>
+                <li>Speech Recognition</li>
+                <li>Face ID / Touch ID</li>
+                <li>Notifications (optional &mdash; only for daily compatibility tips, if you choose to enable them)</li>
+            </ul>
+            <p>Notifications, if enabled, are generated locally on your device and do not involve any server-side push notification service.</p>
+        </section>
+
+        <!-- 7. Children's Privacy -->
+        <section>
+            <h2>7. Children&rsquo;s Privacy</h2>
+            <p>StarMatch is designed to be safe and appropriate for users of all ages, including children. We take children&rsquo;s privacy seriously and comply with applicable regulations, including the <strong>Children&rsquo;s Online Privacy Protection Act (COPPA)</strong> in the United States.</p>
+
+            <div class="highlight-box">
+                <p>&#128100; StarMatch does not collect any personal information from any user, including children under the age of 13.</p>
+            </div>
+
+            <p>Specifically:</p>
+            <ul>
+                <li>The App does <strong>not</strong> collect, store, or transmit any personal information from any user, regardless of age.</li>
+                <li>The App does <strong>not</strong> include any third-party analytics, advertising, or tracking that could collect information from children.</li>
+                <li>The App does <strong>not</strong> require any user registration or account creation.</li>
+                <li>The App does <strong>not</strong> include any features that enable communication with other users or third parties.</li>
+                <li>All App content is appropriate for users of all ages.</li>
+            </ul>
+
+            <p>If you are a parent or guardian and believe your child has provided personal information through the App (which, by design, the App does not collect), please contact us at <a href="mailto:support@starmatch.app" style="color: #667eea;">support@starmatch.app</a> and we will assist you.</p>
+        </section>
+
+        <!-- 8. Your Rights -->
+        <section>
+            <h2>8. Your Rights</h2>
+            <p>Because StarMatch does not collect or store any of your data on our servers (we have no servers), your data is entirely under your control on your own device.</p>
+
+            <p>You have complete control over the data stored by the App:</p>
+            <ul>
+                <li><strong>Access:</strong> All data is stored on your device and is accessible to you through the App.</li>
+                <li><strong>Delete:</strong> You can delete any data stored by the App by removing the App from your device. This permanently removes all locally stored data.</li>
+                <li><strong>Modify:</strong> You can modify or clear preferences and stored data within the App&rsquo;s settings at any time.</li>
+                <li><strong>Export:</strong> Shareable result cards generated by the App are created on your device and shared at your discretion.</li>
+            </ul>
+
+            <p>If you are a resident of the European Economic Area (EEA), United Kingdom, California, or any other jurisdiction with data protection laws, please note that since we do not collect or process any personal data, there is no personal data for us to manage under these regulations. Your data remains entirely on your device under your control at all times.</p>
+        </section>
+
+        <!-- 9. Changes to This Policy -->
+        <section>
+            <h2>9. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. If we make material changes to our data practices (for example, if we begin collecting any data in a future version), we will update this Privacy Policy and, if required by applicable law, notify you through the App or other appropriate means.</p>
+            <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your privacy. The &ldquo;Effective Date&rdquo; at the top of this policy indicates when this version was last updated.</p>
+        </section>
+
+        <!-- 10. Contact Us -->
+        <section class="contact-card">
+            <h2>10. Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please do not hesitate to contact us:</p>
+            <p style="margin-top: 20px;">
+                <a href="mailto:support@starmatch.app">support@starmatch.app</a>
+            </p>
+            <p style="margin-top: 8px; font-size: 14px; opacity: 0.8;">StarMatch &bull; com.xiaoyu.starmatch</p>
+            <p style="font-size: 14px; opacity: 0.8;">We aim to respond to all inquiries within 30 days.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 StarMatch. All rights reserved.</p>
+            <p style="margin-top: 8px;">This privacy policy is self-contained and requires no external dependencies.</p>
+        </footer>
+    </div>
+</body>
+</html>
