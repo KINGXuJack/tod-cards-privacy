@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KindQuest — Support</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #6366F1;
+      --primary-dark: #4F46E5;
+      --primary-light: #EEF2FF;
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --text-tertiary: #86868B;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #E5E5EA;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --transition: 0.2s ease;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header */
+    .header {
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6, #A78BFA);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .header-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--bg-primary);
+      padding: 60px 22px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* App Overview */
+    .overview {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 22px;
+    }
+
+    .overview-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .overview-card h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .overview-card > p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .feature-icon.self-care { background: #FEF3C7; }
+    .feature-icon.social { background: #DBEAFE; }
+    .feature-icon.environmental { background: #D1FAE5; }
+    .feature-icon.streak { background: #FEE2E2; }
+    .feature-icon.impact { background: #EDE9FE; }
+    .feature-icon.privacy { background: #F3F4F6; }
+
+    .feature-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .feature-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* FAQ Section */
+    .faq {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px 60px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .faq-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .faq-header p {
+      color: var(--text-secondary);
+      font-size: 17px;
+    }
+
+    .faq-list {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+
+    details:last-child {
+      border-bottom: none;
+    }
+
+    details:hover {
+      background: var(--bg-secondary);
+    }
+
+    details[open] {
+      background: var(--primary-light);
+    }
+
+    details[open] summary {
+      color: var(--primary-dark);
+    }
+
+    summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      list-style: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 5l5 5-5 5' stroke='%2386868B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform var(--transition);
+    }
+
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    details[open] summary::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 5l5 5-5 5' stroke='%234F46E5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .faq-answer p {
+      margin-bottom: 12px;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer ul {
+      margin: 8px 0 12px 20px;
+    }
+
+    .faq-answer li {
+      margin-bottom: 6px;
+    }
+
+    .faq-answer strong {
+      color: var(--text-primary);
+    }
+
+    /* Contact Section */
+    .contact {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px 60px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .contact-card h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 17px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 14px 28px;
+      border-radius: 980px;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    .contact-email:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 24px 22px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 734px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .overview-card {
+        padding: 28px 24px;
+      }
+
+      .overview-card h2,
+      .faq-header h2,
+      .contact-card h2 {
+        font-size: 24px;
+      }
+
+      .contact-card {
+        padding: 36px 24px;
+      }
+
+      summary {
+        padding: 18px 20px;
+        font-size: 15px;
+      }
+
+      .faq-answer {
+        padding: 0 20px 18px;
+        font-size: 14px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-logo">K</div>
+      <div>
+        <div class="header-title">KindQuest</div>
+        <div class="header-subtitle">Support</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>How can we <span>help</span>?</h1>
+      <p>Everything you need to know about using KindQuest, from getting started to making the most of every challenge.</p>
+    </div>
+  </section>
+
+  <!-- App Overview -->
+  <section class="overview">
+    <div class="overview-card">
+      <h2>About KindQuest</h2>
+      <p>A daily kindness challenge app designed to help you build meaningful habits of compassion — for yourself, for others, and for the planet.</p>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon self-care">🧘</div>
+          <h3>Self-Care</h3>
+          <p>Challenges focused on personal well-being, mindfulness, and self-compassion.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon social">🤝</div>
+          <h3>Social Kindness</h3>
+          <p>Acts of kindness that connect you with others and brighten their day.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon environmental">🌱</div>
+          <h3>Environmental</h3>
+          <p>Small actions that make a positive impact on the world around you.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon streak">🔥</div>
+          <h3>Streak Tracking</h3>
+          <p>Build momentum by completing challenges day after day.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon impact">📊</div>
+          <h3>Impact Statistics</h3>
+          <p>See the cumulative effect of your kindness over time.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon privacy">🔒</div>
+          <h3>Fully Private</h3>
+          <p>All data stored locally. No login, no tracking, no cloud sync.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to the most common questions.</p>
+    </div>
+    <div class="faq-list">
+
+      <!-- FAQ 1 -->
+      <details>
+        <summary>What is KindQuest?</summary>
+        <div class="faq-answer">
+          <p>KindQuest is a daily kindness challenge app for iOS that helps you build a habit of compassion through small, meaningful actions. Each day, the app presents you with a new challenge to complete — whether it's something kind for yourself, a gesture for someone else, or a positive act for the environment.</p>
+          <p>With 105 preset challenges across three categories, streak tracking, and impact statistics, KindQuest makes it easy and rewarding to spread kindness every day.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details>
+        <summary>How do daily challenges work?</summary>
+        <div class="faq-answer">
+          <p>Every day, KindQuest serves you a fresh challenge to complete. You can mark it as done once you've finished the action. The app keeps track of your completions so you can see your progress over time and build a streak of consecutive days.</p>
+          <p>You can also browse challenges by category, skip ahead, or revisit past challenges from your completion history.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details>
+        <summary>What are the three challenge categories?</summary>
+        <div class="faq-answer">
+          <p>KindQuest organizes challenges into three distinct categories:</p>
+          <ul>
+            <li><strong>Self-Care</strong> — Practices that nurture your own well-being, such as taking a mindful walk, writing down three things you're grateful for, or doing something you've been putting off just for yourself.</li>
+            <li><strong>Social Kindness</strong> — Acts that connect you with others, like sending a heartfelt message to a friend, helping a neighbor, or offering a genuine compliment to a stranger.</li>
+            <li><strong>Environmental</strong> — Small actions that benefit the planet, such as picking up litter, planting something green, or reducing waste in your daily routine.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details>
+        <summary>How many preset challenges are included?</summary>
+        <div class="faq-answer">
+          <p>KindQuest comes with <strong>105 preset challenges</strong> spread across the three categories. That's enough variety to keep things fresh for over three months, and you can always add your own custom challenges to extend the experience even further.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details>
+        <summary>Can I add my own custom challenges?</summary>
+        <div class="faq-answer">
+          <p>Yes! You can create your own custom challenges in addition to the 105 preset ones. Just tap the option to add a new challenge, write your own kindness idea, assign it to any of the three categories, and it will be included in your daily rotation alongside the built-in challenges.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details>
+        <summary>How does streak tracking work?</summary>
+        <div class="faq-answer">
+          <p>Your streak counts the number of consecutive days you've completed at least one challenge. Complete a challenge today, and your streak continues. Miss a day, and the streak resets to zero.</p>
+          <p>The streak counter is prominently displayed on the home screen so you can see your momentum at a glance. The longer your streak, the more satisfying it is to keep it going!</p>
+        </div>
+      </details>
+
+      <!-- FAQ 7 -->
+      <details>
+        <summary>What is the Impact tab?</summary>
+        <div class="faq-answer">
+          <p>The Impact tab shows you a visual overview of your kindness journey. It displays key statistics such as:</p>
+          <ul>
+            <li>Total number of challenges completed</li>
+            <li>Your longest and current streaks</li>
+            <li>Breakdown of completions by category</li>
+            <li>Estimated number of people impacted by your actions</li>
+          </ul>
+          <p>It's designed to give you a satisfying picture of the positive difference you've been making over time.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 8 -->
+      <details>
+        <summary>How are "people impacted" calculated?</summary>
+        <div class="faq-answer">
+          <p>The "people impacted" metric is an estimate based on the types of challenges you've completed. Each challenge has an associated impact value — for example, sending a kind message might impact 1 person, while organizing a community cleanup might impact dozens.</p>
+          <p>These values are approximations meant to give you a sense of your growing positive influence. They're not precise measurements, but rather a motivating way to see the ripple effect of your kindness.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 9 -->
+      <details>
+        <summary>Do I need an account or login?</summary>
+        <div class="faq-answer">
+          <p>No. KindQuest does not require any account creation or login. The app works immediately after you download it — just open it and start completing challenges. There are no passwords, no email verification, and no personal information required.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 10 -->
+      <details>
+        <summary>Does the app require internet?</summary>
+        <div class="faq-answer">
+          <p>No. KindQuest works <strong>fully offline</strong>. All challenges, your progress, and your custom challenges are stored locally on your device. You can use the app anywhere — on a hike, on a plane, or in a dead zone — without needing any internet connection.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 11 -->
+      <details>
+        <summary>Is my data private?</summary>
+        <div class="faq-answer">
+          <p>Absolutely. All of your data — completed challenges, streaks, custom challenges, and statistics — is stored <strong>entirely on your device</strong>. We do not collect, transmit, or store any personal data on external servers. KindQuest does not include analytics, tracking, or advertising.</p>
+          <p>Your kindness journey is yours alone, and it stays on your phone.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 12 -->
+      <details>
+        <summary>How do daily notifications work?</summary>
+        <div class="faq-answer">
+          <p>KindQuest can send you a gentle daily reminder to complete your challenge for the day. You can choose what time you'd like to receive this notification in the app settings. The notification includes a short, encouraging message and a preview of today's challenge category.</p>
+          <p>Notifications are delivered through the iOS local notification system, which means they run entirely on your device — no server is involved.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 13 -->
+      <details>
+        <summary>Can I turn off notifications?</summary>
+        <div class="faq-answer">
+          <p>Yes, you have full control over notifications. You can:</p>
+          <ul>
+            <li>Turn notifications off completely in the app settings</li>
+            <li>Change the delivery time to better fit your schedule</li>
+            <li>Disable them through your iPhone's system Settings under Notifications > KindQuest</li>
+          </ul>
+          <p>The app works perfectly fine without notifications — they're entirely optional.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 14 -->
+      <details>
+        <summary>How do I view my completion history?</summary>
+        <div class="faq-answer">
+          <p>You can view your complete challenge history from the History tab in the app. It shows a chronological list of all the challenges you've completed, including the date, challenge text, and category. You can scroll back as far as you'd like to see your full kindness journey.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 15 -->
+      <details>
+        <summary>Can I export my data?</summary>
+        <div class="faq-answer">
+          <p>Currently, KindQuest stores all data locally on your device and does not support exporting data to external files. If you delete the app, your challenge history and custom challenges will be removed as well.</p>
+          <p>We may add export functionality in a future update. If this is important to you, please reach out to us at <strong>support@kindquest.app</strong> — user feedback helps us prioritize new features.</p>
+        </div>
+      </details>
+
+      <!-- FAQ 16 -->
+      <details>
+        <summary>How do I report a bug or request a feature?</summary>
+        <div class="faq-answer">
+          <p>We'd love to hear from you! If you've found a bug, have a feature suggestion, or just want to share your experience with KindQuest, please email us at:</p>
+          <p><strong><a href="mailto:support@kindquest.app" style="color: var(--primary); text-decoration: none;">support@kindquest.app</a></strong></p>
+          <p>Include as much detail as possible — your device model, iOS version, and a description of the issue or idea. We read every message and use your feedback to improve the app.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <div class="contact-card">
+      <h2>Still have questions?</h2>
+      <p>Our team is here to help. Reach out anytime.</p>
+      <a href="mailto:support@kindquest.app" class="contact-email">
+        support@kindquest.app
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>KindQuest is developed with care. All data is stored locally on your device. &copy; 2026 KindQuest. Contact: <a href="mailto:support@kindquest.app">support@kindquest.app</a></p>
+  </footer>
+
+</body>
+</html>

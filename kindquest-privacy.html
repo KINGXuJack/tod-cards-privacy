@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KindQuest - Privacy Policy</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f5f5f7;
+            --color-text-primary: #1d1d1f;
+            --color-text-secondary: #6e6e73;
+            --color-text-tertiary: #86868b;
+            --color-accent: #0071e3;
+            --color-accent-hover: #0077ed;
+            --color-border: #d2d2d7;
+            --color-highlight-bg: #f0f7ff;
+            --color-highlight-border: #0071e3;
+            --color-success: #34c759;
+            --font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Monaco, monospace;
+            --max-width: 820px;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: var(--color-bg-secondary);
+            border-bottom: 1px solid var(--color-border);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .header__icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 50%, #ffd93d 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header__title {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header__subtitle {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Last Updated */
+        .last-updated {
+            text-align: center;
+            color: var(--color-text-tertiary);
+            font-size: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* Privacy Badge */
+        .privacy-badge {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+            border: 1px solid var(--color-success);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .privacy-badge__icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .privacy-badge__title {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 6px;
+        }
+
+        .privacy-badge__text {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .section__header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section__title {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+
+        .section__content {
+            padding-left: 38px;
+        }
+
+        .section__content p {
+            margin-bottom: 12px;
+            color: var(--color-text-primary);
+        }
+
+        .section__content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--color-highlight-bg);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box--success {
+            background: #f0faf2;
+            border-left-color: var(--color-success);
+        }
+
+        .highlight-box__text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--color-text-primary);
+        }
+
+        .highlight-box__text strong {
+            color: var(--color-text-primary);
+        }
+
+        /* Lists */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .info-list__item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--color-bg-secondary);
+            font-size: 15px;
+        }
+
+        .info-list__item:last-child {
+            border-bottom: none;
+        }
+
+        .info-list__icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            margin-top: 1px;
+            font-size: 12px;
+        }
+
+        .info-list__icon--none {
+            background: #e8f5e9;
+            color: var(--color-success);
+        }
+
+        .info-list__icon--yes {
+            background: var(--color-highlight-bg);
+            color: var(--color-accent);
+        }
+
+        .info-list__label {
+            flex: 1;
+            color: var(--color-text-secondary);
+        }
+
+        .info-list__value {
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table__header {
+            background: var(--color-bg-secondary);
+        }
+
+        .data-table__header th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .data-table__row td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--color-bg-secondary);
+            vertical-align: top;
+        }
+
+        .data-table__row:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table__badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .data-table__badge--none {
+            background: #e8f5e9;
+            color: #1b7a2b;
+        }
+
+        .data-table__badge--local {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .footer__text {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+            line-height: 1.6;
+        }
+
+        .footer__link {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .footer__link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin: 16px 0;
+        }
+
+        .contact-card__row {
+            display: flex;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 15px;
+        }
+
+        .contact-card__row:not(:last-child) {
+            margin-bottom: 4px;
+        }
+
+        .contact-card__label {
+            color: var(--color-text-secondary);
+            min-width: 100px;
+        }
+
+        .contact-card__value {
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+
+        .contact-card__value a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .contact-card__value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 36px 20px;
+            }
+
+            .header__title {
+                font-size: 28px;
+            }
+
+            .main {
+                padding: 32px 20px 60px;
+            }
+
+            .section__title {
+                font-size: 21px;
+            }
+
+            .section__content {
+                padding-left: 0;
+                margin-top: 12px;
+            }
+
+            .data-table {
+                font-size: 14px;
+            }
+
+            .data-table__header th,
+            .data-table__row td {
+                padding: 10px 12px;
+            }
+
+            .info-list__item {
+                flex-direction: column;
+            }
+
+            .info-list__icon {
+                margin-bottom: 4px;
+            }
+
+            .contact-card__row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-card__label {
+                min-width: auto;
+                margin-bottom: 2px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header {
+                background: none;
+                border-bottom: 2px solid #000;
+            }
+
+            .footer {
+                background: none;
+                border-top: 2px solid #000;
+            }
+
+            .privacy-badge {
+                border: 2px solid #000;
+            }
+
+            .highlight-box {
+                border-left: 4px solid #000;
+            }
+
+            body {
+                font-size: 12pt;
+            }
+
+            .section__title {
+                font-size: 18pt;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__icon">&#x2728;</div>
+        <h1 class="header__title">KindQuest</h1>
+        <p class="header__subtitle">Privacy Policy</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Last Updated -->
+        <p class="last-updated">Last Updated: May 11, 2026</p>
+
+        <!-- Privacy Summary Badge -->
+        <div class="privacy-badge">
+            <div class="privacy-badge__icon">&#x1f6e1;</div>
+            <div class="privacy-badge__title">Your Data Stays on Your Device</div>
+            <p class="privacy-badge__text">
+                KindQuest does not collect, store, or transmit any personal data. Everything stays on your device. No accounts, no tracking, no sharing. Ever.
+            </p>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">1</span>
+                <h2 class="section__title">Introduction</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    Welcome to KindQuest, a daily kindness challenge app designed to help you complete acts of kindness, track your streaks, and see the positive impact you make in the world.
+                </p>
+                <p>
+                    Your privacy is fundamental to how we build our app. This Privacy Policy explains in clear terms how KindQuest handles information. The short version is simple: <strong>we do not collect any personal data from you.</strong>
+                </p>
+                <div class="highlight-box">
+                    <p class="highlight-box__text">
+                        <strong>Key Principle:</strong> KindQuest operates entirely on your device. All data you create -- your kindness challenges, streaks, history, and progress -- is stored locally using Apple's SwiftData framework. Nothing is sent to any server, shared with any third party, or accessible to anyone but you.
+                    </p>
+                </div>
+                <p>
+                    This policy applies to the KindQuest iOS application ("App") developed by KindQuest. By using the App, you agree to the terms described in this policy. If you do not agree, please do not use the App.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Information We Collect -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">2</span>
+                <h2 class="section__title">Information We Collect</h2>
+            </div>
+            <div class="section__content">
+                <p><strong>We do not collect any personal information from you.</strong></p>
+                <p>
+                    KindQuest is designed from the ground up to respect your privacy. The app has no network access, no analytics, no advertising SDKs, no user accounts, and no mechanism to transmit data of any kind.
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr class="data-table__header">
+                            <th>Data Type</th>
+                            <th>Collected?</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="data-table__row">
+                            <td>Personal Identifiers</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>Name, email, phone, or any identifiers</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Usage Data</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>No analytics or usage tracking</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Device Information</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>No device ID, model, or OS info collected</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Location Data</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>Location services not used</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Contact Data</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>Address book not accessed</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Photos / Media</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>Photo library not accessed</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Advertising ID</td>
+                            <td><span class="data-table__badge data-table__badge--none">No</span></td>
+                            <td>No advertising or tracking frameworks</td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>App Content</td>
+                            <td><span class="data-table__badge data-table__badge--local">Local Only</span></td>
+                            <td>Challenges, streaks, and history stored on device</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: How We Use Information -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">3</span>
+                <h2 class="section__title">How We Use Information</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    Since KindQuest does not collect any personal information, there is no data for us to use, process, analyze, or share.
+                </p>
+                <p>
+                    All app content and data that you generate while using KindQuest -- including completed kindness challenges, streak counts, and progress history -- is used exclusively within the app on your device to provide you with the app's features:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4cb;</span>
+                        <span class="info-list__label">Track your daily kindness challenges</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f525;</span>
+                        <span class="info-list__label">Maintain and display your streak count</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4ca;</span>
+                        <span class="info-list__label">Show your positive impact over time</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f514;</span>
+                        <span class="info-list__label">Deliver daily kindness reminders via notifications</span>
+                    </li>
+                </ul>
+                <div class="highlight-box highlight-box--success">
+                    <p class="highlight-box__text">
+                        <strong>Zero Data Transmission:</strong> No data leaves your device. There are no servers, no cloud sync, no data processing pipelines, and no third-party services involved. Your kindness journey is yours alone.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Data Storage -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">4</span>
+                <h2 class="section__title">Data Storage</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    All data generated by KindQuest is stored <strong>exclusively on your device</strong> using Apple's SwiftData framework. This means:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">Your data is stored locally in a SwiftData persistent store on your iPhone or iPad.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No cloud backup or synchronization is performed by KindQuest.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">Data is protected by iOS's built-in app sandbox and file system encryption.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">If you delete the app, all KindQuest data is permanently removed from your device.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No data is accessible to other apps on your device due to iOS sandboxing.</span>
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    <p class="highlight-box__text">
+                        <strong>What is SwiftData?</strong> SwiftData is Apple's native data persistence framework for iOS. It stores data locally within the app's sandboxed container on your device. The data never leaves your device unless you explicitly choose to back up your device through iCloud or iTunes -- and even then, the data remains encrypted and private.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Third-Party Services -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">5</span>
+                <h2 class="section__title">Third-Party Services</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    KindQuest does <strong>not</strong> integrate with any third-party services, SDKs, or frameworks that collect or transmit user data.
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr class="data-table__header">
+                            <th>Service Type</th>
+                            <th>Used?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="data-table__row">
+                            <td>Analytics (e.g., Firebase, Mixpanel, Amplitude)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Advertising Networks (e.g., AdMob, AppLovin)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Crash Reporting (e.g., Crashlytics, Sentry)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Social Media SDKs (e.g., Facebook Login, Sign in with Google)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Cloud Storage (e.g., AWS, Firebase, iCloud sync)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Push Notification Services (beyond Apple's APNs)</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                        <tr class="data-table__row">
+                            <td>Any network-based SDK or framework</td>
+                            <td><span class="data-table__badge data-table__badge--none">Not Used</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 16px;">
+                    The app has no network access permissions and does not make any outbound network requests of any kind.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 6: Device Permissions -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">6</span>
+                <h2 class="section__title">Device Permissions</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    KindQuest requests only the following permission on your device:
+                </p>
+
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f514;</span>
+                        <span class="info-list__label">
+                            <strong>Notifications</strong> -- Used solely to deliver daily kindness reminders at times you choose. You can enable or disable notifications at any time through your device settings. No notification data is transmitted to any server.
+                        </span>
+                    </li>
+                </ul>
+
+                <p>
+                    KindQuest does <strong>not</strong> request or require access to:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Camera or Photo Library</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Location Services</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Contacts</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Microphone</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Health Data (HealthKit)</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Bluetooth</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Motion &amp; Fitness</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x1f6ab;</span>
+                        <span class="info-list__label">Face ID / Touch ID</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 7: Children's Privacy -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">7</span>
+                <h2 class="section__title">Children's Privacy</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    KindQuest is safe for users of all ages, including children under the age of 13.
+                </p>
+                <div class="highlight-box highlight-box--success">
+                    <p class="highlight-box__text">
+                        <strong>COPPA Compliance:</strong> Since KindQuest does not collect, store, or transmit any personal information of any kind, it fully complies with the Children's Online Privacy Protection Act (COPPA). There is no personal data to collect from any user, regardless of age.
+                    </p>
+                </div>
+                <p>
+                    Specifically:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No personal information is collected from any user, including children.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No user accounts or registration is required or available.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No in-app purchases or advertising that could target children.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">No external links or redirects to websites or services outside the app.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--none">&#x2705;</span>
+                        <span class="info-list__label">All content is stored locally and is not accessible to other users or services.</span>
+                    </li>
+                </ul>
+                <p>
+                    We encourage parents and guardians to review this privacy policy and supervise their children's use of the app. If you have any questions about children's privacy, please contact us at <a href="mailto:support@kindquest.app" style="color: var(--color-accent); text-decoration: none;">support@kindquest.app</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 8: Your Rights -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">8</span>
+                <h2 class="section__title">Your Rights</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    Because KindQuest does not collect any personal data, there is no data for you to access, correct, delete, or port. However, you maintain full control over the data stored locally on your device:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4f1;</span>
+                        <span class="info-list__label">
+                            <strong>Delete Your Data:</strong> Simply delete the KindQuest app from your device. All data associated with the app will be permanently and irreversibly removed.
+                        </span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4dd;</span>
+                        <span class="info-list__label">
+                            <strong>Manage In-App Content:</strong> You can delete individual kindness challenges, reset your streak, or clear your history at any time from within the app.
+                        </span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f514;</span>
+                        <span class="info-list__label">
+                            <strong>Control Notifications:</strong> You can enable or disable daily reminders through your device's notification settings at any time.
+                        </span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f512;</span>
+                        <span class="info-list__label">
+                            <strong>Data Portability:</strong> Since all data is stored locally on your device using SwiftData, it is accessible only through the app. There is no cloud export or data download feature.
+                        </span>
+                    </li>
+                </ul>
+                <p>
+                    If you have questions about your privacy rights under applicable laws (including GDPR, CCPA, or other regional regulations), please contact us. We are happy to help.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 9: Changes to This Policy -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">9</span>
+                <h2 class="section__title">Changes to This Privacy Policy</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    We may update this Privacy Policy from time to time. If we make any material changes -- for example, if we ever add features that involve data collection or network connectivity -- we will:
+                </p>
+                <ul class="info-list">
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4c4;</span>
+                        <span class="info-list__label">Update the "Last Updated" date at the top of this policy.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x1f4e2;</span>
+                        <span class="info-list__label">Notify you through the app or via a prominent notice before changes take effect.</span>
+                    </li>
+                    <li class="info-list__item">
+                        <span class="info-list__icon info-list__icon--yes">&#x2705;</span>
+                        <span class="info-list__label">Seek your consent where required by applicable law.</span>
+                    </li>
+                </ul>
+                <p>
+                    We encourage you to review this Privacy Policy periodically to stay informed about how we protect your privacy.
+                </p>
+                <div class="highlight-box">
+                    <p class="highlight-box__text">
+                        <strong>Our Commitment:</strong> Any future change that involves collecting, transmitting, or sharing personal data will be clearly communicated and will require your explicit consent before taking effect. We will not silently start collecting data.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Contact Us -->
+        <section class="section">
+            <div class="section__header">
+                <span class="section__number">10</span>
+                <h2 class="section__title">Contact Us</h2>
+            </div>
+            <div class="section__content">
+                <p>
+                    If you have any questions, concerns, or requests regarding this Privacy Policy or your privacy while using KindQuest, please don't hesitate to reach out:
+                </p>
+
+                <div class="contact-card">
+                    <div class="contact-card__row">
+                        <span class="contact-card__label">App Name</span>
+                        <span class="contact-card__value">KindQuest</span>
+                    </div>
+                    <div class="contact-card__row">
+                        <span class="contact-card__label">Bundle ID</span>
+                        <span class="contact-card__value" style="font-family: var(--font-mono); font-size: 14px;">com.xiaoyu.kindquest</span>
+                    </div>
+                    <div class="contact-card__row">
+                        <span class="contact-card__label">Email</span>
+                        <span class="contact-card__value"><a href="mailto:support@kindquest.app">support@kindquest.app</a></span>
+                    </div>
+                </div>
+
+                <p>
+                    We aim to respond to all privacy-related inquiries within 30 days.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer__text">
+            &copy; 2026 KindQuest. All rights reserved.<br>
+            KindQuest is developed by KindQuest.<br><br>
+            For questions or concerns, contact us at
+            <a href="mailto:support@kindquest.app" class="footer__link">support@kindquest.app</a>
+        </p>
+    </footer>
+
+</body>
+</html>
